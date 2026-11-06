@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matriz de ideación</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="encabezado">
+    <div class="contenedor">
+      <p class="anexo">ANEXO 5</p>
+      <h1>Matriz de ideación</h1>
+      <p class="subtitulo">Para diligenciamiento por parte del equipo docente</p>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <div class="progreso" aria-live="polite">
+      <div class="progreso-texto"><span id="progresoTexto">0 de 0 opciones diligenciadas</span></div>
+      <div class="progreso-barra"><div id="progresoRelleno"></div></div>
+    </div>
+
+    <form id="formMatriz" novalidate>
+      <section class="tarjeta">
+        <h2>Datos generales</h2>
+        <div class="grid-datos">
+          <label class="campo">
+            <span>Institución educativa</span>
+            <input type="text" id="institucion" name="institucion" autocomplete="organization">
+          </label>
+          <label class="campo">
+            <span>Sede</span>
+            <input type="text" id="sede" name="sede">
+          </label>
+          <label class="campo campo-ancho">
+            <span>Docente(s) responsable(s)</span>
+            <input type="text" id="docentes" name="docentes" placeholder="Nombres separados por coma">
+          </label>
+          <label class="campo">
+            <span>Municipio</span>
+            <input type="text" id="municipio" name="municipio">
+          </label>
+          <label class="campo">
+            <span>Fecha</span>
+            <input type="date" id="fecha" name="fecha">
+          </label>
+        </div>
+      </section>
+
+      <section class="tarjeta">
+        <h2>Matriz de ideación</h2>
+        <p class="ayuda">Proponga tres alternativas. Para cada una, describa la actividad principal, el uso posible del kit TIC de emergencia y su viabilidad. Sus respuestas se guardan automáticamente en este navegador.</p>
+        <div id="componentes"></div>
+      </section>
+
+      <div class="acciones">
+        <button type="button" id="btnLimpiar" class="boton boton-secundario">Limpiar formulario</button>
+        <button type="button" id="btnPdf" class="boton boton-primario">Generar PDF</button>
+      </div>
+      <p id="mensaje" class="mensaje" role="status"></p>
+    </form>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">Las respuestas no se envían a ningún servidor: se guardan solo en este dispositivo.</div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+  <script src="anexo5.js"></script>
+</body>
+</html>
